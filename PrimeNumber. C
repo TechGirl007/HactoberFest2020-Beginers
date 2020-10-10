@@ -1,0 +1,33 @@
+/*Identifying Prime Number from 0 to 100*/
+
+#include <stdio.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+main(){
+ int this_number, divisor, not_prime;
+ int last_prime;
+ this_number = 3;
+ last_prime = 3;
+ printf("Let's work out Prime Numbers to 100 \n");
+ while(this_number < 100){
+ divisor = this_number / 2;
+ not_prime = 0;
+ while(divisor > 1){
+ if(this_number % divisor == 0){
+ not_prime = 1;
+ divisor = 0;
+ }
+ else
+ divisor = divisor-1;
+ }
+ if(not_prime == 0){
+ if(this_number == last_prime+2)
+ printf("%d, is a prime number\n",
+ last_prime, this_number);
+ last_prime = this_number;
+ }
+ this_number = this_number + 1;
+ }
+  exit(EXIT_SUCCESS);
+}
